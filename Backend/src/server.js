@@ -17,8 +17,8 @@ const PORT=process.env.PORT
 const __dirname = path.resolve();
 
 app.use(cors({
-    origin: "http://localhost:5174",
-    credentials: true, 
+    origin: process.env.CLIENT_URL,
+    credentials: true,
 }));
 
 app.use(express.json());
@@ -29,13 +29,13 @@ app.use("/api/users", userRoute);
 app.use("/api/chat-page", chatRoute);
 
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "../frontend/dist")));
+// if (process.env.NODE_ENV === "production") {
+//   app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../frontend", "dist", "index.html"));
+//   });
+// }
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
