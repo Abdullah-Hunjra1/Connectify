@@ -44,7 +44,9 @@
 
 ## 📸 Screenshots
 
-> Screenshots will be added soon.
+<img width="902" height="412" alt="connectify-login" src="https://github.com/user-attachments/assets/90f8fed8-d12e-45de-8440-ee9337dc2241" />
+<img width="947" height="412" alt="video-calling thumbnail" src="https://github.com/user-attachments/assets/0599e0f2-6214-43ab-b8dc-2ac710f07274" />
+
 
 ---
 
