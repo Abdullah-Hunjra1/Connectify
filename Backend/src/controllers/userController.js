@@ -3,12 +3,12 @@ import User from "../models/userModel.js"
 
 export async function getRecomendedUsers(req, res) {
     try {
-        const currentUserUd = req.user.Id
+        const currentUserId = req.user.id
         const currentUser = req.user
 
         const recomendedUsers = await User.find({
             $and:[
-                { _id: { $ne: currentUserUd } }, // Exclude current user
+                { _id: { $ne: currentUserId } }, // Exclude current user
                 { _id: { $nin: currentUser.friends } }, // Exclude friends
                 {isOnboarded: true} // Only include onboarded users
             ]
